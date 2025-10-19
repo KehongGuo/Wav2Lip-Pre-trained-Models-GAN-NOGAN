@@ -74,7 +74,29 @@ wget "https://github.com/KehongGuo/Wav2Lip-Pre-trained-Models-GAN-NOGAN.git"
 # Download the NOGAN model
 wget "https://github.com/KehongGuo/Wav2Lip-Pre-trained-Models-GAN-NOGAN.git" -O /path/to/Wav2Lip/checkpoints/Wav2Lip-SD-NOGAN.pt
 ```
-**Note**: Remember to replace `your-username/your-repo-name` with your actual GitHub username and repository name.
+
+### Option 3: For Google Colab (Recommended for Notebooks)
+
+This is the easiest and most reliable way to use the models in a Google Colab notebook. The `!git clone` command is fast and handles everything for you.
+
+Place the following code block in a setup cell in your Colab notebook.
+
+```python
+# @title Download Wav2Lip and Pre-trained Models
+# --- 1. Clone the official Wav2Lip repository ---
+%cd /content/
+!git clone https://github.com/Rudrabha/Wav2Lip.git
+
+# --- 2. Clone this repository for the pre-trained models ---
+!git clone https://github.com/KehongGuo/Wav2Lip-Pre-trained-Models-GAN-NOGAN.git
+
+# --- 3. Copy the models into Wav2Lip's checkpoint directory ---
+!mkdir -p /content/Wav2Lip/checkpoints
+!cp /content/wav2lip_models/Wav2Lip-SD-GAN.pt /content/Wav2Lip/checkpoints/
+!cp /content/wav2lip_models/Wav2Lip-SD-NOGAN.pt /content/Wav2Lip/checkpoints/
+```
+
+After running this setup cell, you can run your Wav2Lip inference command using the standard path, as the models will be in the expected location.
 
 ## License
 
@@ -83,3 +105,4 @@ These model files are provided under the same license as the original Wav2Lip pr
 ## Acknowledgements
 
 All credit for the training and architecture of these models goes to the original authors of the Wav2Lip paper and their public implementation. This repository is simply a convenient host for the pre-trained weights to facilitate easier access and project setup.
+
