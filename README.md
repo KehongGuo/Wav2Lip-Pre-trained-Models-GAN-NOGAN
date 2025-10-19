@@ -88,7 +88,7 @@ Place the following code block in a setup cell in your Colab notebook.
 !git clone https://github.com/Rudrabha/Wav2Lip.git
 
 # --- 2. Clone this repository for the pre-trained models ---
-!git clone https://github.com/KehongGuo/Wav2Lip-Pre-trained-Models-GAN-NOGAN.git
+!git clone https://github.com/KehongGuo/Wav2Lip-Pre-trained-Models-GAN-NOGAN.git wav2lip_models
 
 # --- 3. Copy the models into Wav2Lip's checkpoint directory ---
 !mkdir -p /content/Wav2Lip/checkpoints
